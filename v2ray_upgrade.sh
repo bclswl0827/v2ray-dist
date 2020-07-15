@@ -26,7 +26,7 @@ if [ $(echo "${LATEST_VERSION}" | sed "s/\.//g") -gt $(echo "${CURRENT_VERSION}"
     curl -L --retry 10 --connect-timeout 10 -H "Cache-Control: no-cache" -o ${TMP_FILE} ${DOWNLOAD_LINK}
 else
     echo -e "\n\033[36m Latest version v${CURRENT_VERSION} of V2Ray is already installed, exiting. \036"
-	exit 0
+    exit 0
 fi
 
 # Install V2Ray and restart services
