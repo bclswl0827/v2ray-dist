@@ -31,7 +31,7 @@ fi
 
 # Install V2Ray and restart services
 if [ $(curl --head -s ${DOWNLOAD_LINK} | grep "Content-Length" | sed "s/Content-Length: //g") -eq $(wc -c ${TMP_FILE} | sed "s/v2ray-linux-mipsle.tar.gz//g" | sed "s/v2ray//g" | sed "s/\///g" | tr -d " a-zA-z") ]; then
-    tar -C /usr/bin/v2ray -xvf ${TMP_FILE}
+    tar -C /usr/bin/v2ray -xzf ${TMP_FILE}
 	chmod 755 /usr/bin/v2ray/v2ray
     echo -e "\n\033[36m Successfully upgraded V2Ray to v${LATEST_VERSION}. \036"
     if [ "${RESTART_SSR}" -eq 1 ]; then
